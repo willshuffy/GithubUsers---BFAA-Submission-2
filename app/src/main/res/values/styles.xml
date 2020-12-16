@@ -9,7 +9,10 @@
         <item name="android:itemBackground">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.NoActionBar." parent="Theme.AppCompat.Light.NoActionBar"></style>
+    <style name="AppTheme.NoActionBar." parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
 
     <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowBackground">@drawable/popup_background</item>

@@ -12,12 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar.">
         <activity android:name="com.willshuffyproject.githubusers_bfaasubmission2.DetailActivity"
-            android:screenOrientation="sensorPortrait">
+            android:screenOrientation="sensorPortrait"
+            android:fitsSystemWindows="true">
 
         </activity>
         <activity
             android:name="com.willshuffyproject.githubusers_bfaasubmission2.SplashScreenActivity"
-            android:screenOrientation="sensorPortrait">
+            android:screenOrientation="sensorPortrait"
+            android:fitsSystemWindows="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +28,8 @@
         </activity>
         <activity
             android:name="com.willshuffyproject.githubusers_bfaasubmission2.MainActivity"
-            android:screenOrientation="sensorPortrait">
+            android:screenOrientation="sensorPortrait"
+            android:fitsSystemWindows="true">
 
         </activity>
     </application>
