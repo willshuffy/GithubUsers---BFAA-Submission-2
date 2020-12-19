@@ -20,7 +20,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/left_arrow_white" />
@@ -29,7 +29,7 @@
         android:id="@+id/iv_menu"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/menus"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/shape_bg_listview"
-        android:layout_marginTop="114dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -72,16 +72,17 @@
     
     <TextView
         android:id="@+id/tv_logo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="GithubUsers"
+        android:text="GithubUsers"
         android:textSize="12sp"
         android:fontFamily="@font/montserrat_medium"
         android:textColor="@color/colorWhite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/rv_user"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:gravity="center"/>
 
     <ImageView
         android:id="@+id/iv_logo"
