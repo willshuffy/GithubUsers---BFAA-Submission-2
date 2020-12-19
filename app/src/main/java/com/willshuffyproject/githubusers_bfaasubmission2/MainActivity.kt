@@ -4,12 +4,10 @@ import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.WindowManager
+import android.view.*
 import android.view.animation.AnimationUtils
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -87,10 +85,6 @@ class MainActivity : AppCompatActivity() {
         popup.show()
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
 
     private fun setWindowFlag(bits: Int, on: Boolean) {
         val win = window
@@ -102,4 +96,21 @@ class MainActivity : AppCompatActivity() {
         }
         win.attributes = winParams
     }
+
+    // fungsi untuk keluar aplikasi
+
+    private var mExitTime = 0L
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mExitTime) > 500) {
+                Toast.makeText(this, "Click twice to exit app", Toast.LENGTH_SHORT).show()
+                mExitTime = System.currentTimeMillis()
+            } else {
+                finishAffinity()
+            }
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
 }
