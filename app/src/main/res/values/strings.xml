@@ -12,4 +12,5 @@
     <string name="yakin__keluar">Anda Yakin Ingin Keluar</string>
     <string name="iya">Ya</string>
     <string name="tidak">Tidak</string>
+    <string name="find_username">Find Username</string>
 </resources>

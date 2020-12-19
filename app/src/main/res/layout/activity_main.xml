@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/shape_bg_listview"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="24dp"
         tools:listitem="@layout/row_item_users"
         app:layout_constraintBottom_toBottomOf="@id/view_background"
@@ -60,16 +60,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <View
-        android:id="@+id/view_circle"
-        android:layout_width="77dp"
-        android:layout_height="77dp"
-        android:background="@drawable/shape_circle"
+    <EditText
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_logo"
-        android:layout_marginBottom="2dp"/>
-    
+        app:layout_constraintBottom_toTopOf="@id/rv_user"
+        android:background="@drawable/shape_row_item"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="16dp"
+        android:textCursorDrawable="@null"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@null"
+        android:hint="@string/find_username"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorWhite"
+        android:drawableStart="@drawable/search_grey"
+        android:drawablePadding="16dp"
+        android:paddingLeft="24dp"
+        app:showDividers="end"/>
+
     <TextView
         android:id="@+id/tv_logo"
         android:layout_width="match_parent"
@@ -80,9 +92,19 @@
         android:textColor="@color/colorWhite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/rv_user"
-        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/search_view"
+        android:layout_marginBottom="16dp"
         android:gravity="center"/>
+
+    <View
+        android:id="@+id/view_circle"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:background="@drawable/shape_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_logo"
+        android:layout_marginBottom="2dp"/>
 
     <ImageView
         android:id="@+id/iv_logo"
