@@ -1,4 +1,4 @@
-package com.willshuffyproject.githubusers_bfaasubmission2
+package com.willshuffyproject.githubusers_bfaasubmission2.activity
 
 import android.graphics.Color
 import android.os.Build
@@ -9,7 +9,7 @@ import android.view.animation.AnimationUtils
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_detail.*
+import com.willshuffyproject.githubusers_bfaasubmission2.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.iv_back
 import kotlinx.android.synthetic.main.activity_main.iv_menu
@@ -21,23 +21,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //statusbar transparant
+        initStatusBar()
+        initTransition()
+        initListener()
 
-        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
-            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true)
-        }
-        if (Build.VERSION.SDK_INT >= 19) {
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        }
-        if (Build.VERSION.SDK_INT >= 21) {
-            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
-            window.statusBarColor = Color.TRANSPARENT
+    }
+
+    private fun initListener(){
+
+        iv_menu.setOnClickListener {
+            showPopUp(iv_menu)
         }
 
+    }
+
+    private fun initTransition(){
         //load animation
 
-        val apps_logo = AnimationUtils.loadAnimation(this, R.anim.alpha_with_scale)
-        val text_logo = AnimationUtils.loadAnimation(this, R.anim.alpha_with_scale)
+        val apps_logo = AnimationUtils.loadAnimation(this,
+            R.anim.alpha_with_scale
+        )
+        val text_logo = AnimationUtils.loadAnimation(this,
+            R.anim.alpha_with_scale
+        )
 
 
         //run animation
@@ -49,9 +55,6 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        iv_menu.setOnClickListener {
-            showPopUp(iv_menu)
-        }
     }
 
     private fun showPopUp(view: View){
@@ -65,7 +68,9 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.action_exit -> {
                     val view = LayoutInflater.from(this).inflate(R.layout.exit_dialog, null)
-                    val alert = AlertDialog.Builder(this, R.style.CustomAlertDialog)
+                    val alert = AlertDialog.Builder(this,
+                        R.style.CustomAlertDialog
+                    )
                         .setView(view)
                         .setCancelable(false)
 
@@ -85,6 +90,21 @@ class MainActivity : AppCompatActivity() {
         popup.show()
     }
 
+    private fun initStatusBar(){
+
+        //statusbar transparant
+
+        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
+            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true)
+        }
+        if (Build.VERSION.SDK_INT >= 19) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        }
+        if (Build.VERSION.SDK_INT >= 21) {
+            setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
+            window.statusBarColor = Color.TRANSPARENT
+        }
+    }
 
     private fun setWindowFlag(bits: Int, on: Boolean) {
         val win = window

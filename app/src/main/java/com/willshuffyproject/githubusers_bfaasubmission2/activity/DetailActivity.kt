@@ -1,4 +1,4 @@
-package com.willshuffyproject.githubusers_bfaasubmission2
+package com.willshuffyproject.githubusers_bfaasubmission2.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.PopupMenu
 import androidx.appcompat.app.AlertDialog
+import com.willshuffyproject.githubusers_bfaasubmission2.R
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.exit_dialog.view.*
 
@@ -36,7 +37,9 @@ class DetailActivity : AppCompatActivity() {
 
                 R.id.action_exit -> {
                     val view = LayoutInflater.from(this).inflate(R.layout.exit_dialog, null)
-                    val alert = AlertDialog.Builder(this, R.style.CustomAlertDialog)
+                    val alert = AlertDialog.Builder(this,
+                        R.style.CustomAlertDialog
+                    )
                         .setView(view)
                         .setCancelable(false)
 

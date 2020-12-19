@@ -4,6 +4,8 @@
     package="com.willshuffyproject.githubusers_bfaasubmission2"
     tools:ignore="LockedOrientationActivity">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,13 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar.">
-        <activity android:name="com.willshuffyproject.githubusers_bfaasubmission2.DetailActivity"
+        <activity android:name="com.willshuffyproject.githubusers_bfaasubmission2.activity.DetailActivity"
             android:screenOrientation="sensorPortrait"
             android:fitsSystemWindows="true">
 
         </activity>
         <activity
-            android:name="com.willshuffyproject.githubusers_bfaasubmission2.SplashScreenActivity"
+            android:name="com.willshuffyproject.githubusers_bfaasubmission2.activity.SplashScreenActivity"
             android:screenOrientation="sensorPortrait"
             android:fitsSystemWindows="true">
             <intent-filter>
@@ -27,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.willshuffyproject.githubusers_bfaasubmission2.MainActivity"
+            android:name="com.willshuffyproject.githubusers_bfaasubmission2.activity.MainActivity"
             android:screenOrientation="sensorPortrait"
             android:fitsSystemWindows="true">
 

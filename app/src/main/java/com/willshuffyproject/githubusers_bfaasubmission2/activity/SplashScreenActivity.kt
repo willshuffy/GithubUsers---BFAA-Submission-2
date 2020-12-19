@@ -1,4 +1,4 @@
-package com.willshuffyproject.githubusers_bfaasubmission2
+package com.willshuffyproject.githubusers_bfaasubmission2.activity
 
 import android.content.Intent
 import android.graphics.Color
@@ -9,6 +9,7 @@ import android.os.Handler
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
+import com.willshuffyproject.githubusers_bfaasubmission2.R
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -34,9 +35,15 @@ class SplashScreenActivity : AppCompatActivity() {
 
         //load animation
 
-        val apps_logo = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom)
-        val text_logo = AnimationUtils.loadAnimation(this, R.anim.bottom_to_top)
-        val desc_img = AnimationUtils.loadAnimation(this, R.anim.alpha_to_alpha)
+        val apps_logo = AnimationUtils.loadAnimation(this,
+            R.anim.top_to_bottom
+        )
+        val text_logo = AnimationUtils.loadAnimation(this,
+            R.anim.bottom_to_top
+        )
+        val desc_img = AnimationUtils.loadAnimation(this,
+            R.anim.alpha_to_alpha
+        )
 
 
         //run animation
