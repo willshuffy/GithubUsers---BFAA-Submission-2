@@ -60,10 +60,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/rv_user"
@@ -74,12 +74,7 @@
         android:textCursorDrawable="@null"
         app:iconifiedByDefault="false"
         app:queryBackground="@null"
-        android:hint="@string/find_username"
-        android:textColorHint="@color/colorGrey"
-        android:textColor="@color/colorWhite"
-        android:drawableStart="@drawable/search_grey"
-        android:drawablePadding="16dp"
-        android:paddingLeft="24dp"
+        app:queryHint="Find Username"
         app:showDividers="end"/>
 
     <TextView
@@ -115,5 +110,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/view_circle"
         android:layout_marginBottom="13dp"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
